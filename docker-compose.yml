@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  jenkins:
+    build: jenkins/
+    ports:
+      - 9999:8080
+  db:
+    build: db/
+    ports:
+      - 5432:5432
+    env_file:
+      - database.env
+    depends_on:
+      - jenkins
+  server:
+    build: server/
+    ports:
+      - 4040:8080
+    depends_on:
+      - db
