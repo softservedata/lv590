@@ -10,7 +10,8 @@ public class ApplDB {
 	private static Connection con = null;
 	private static String username = "devops";
 	private static String password = "DevOps_553";
-	private static String URL = "jdbc:mysql://192.168.153.134:3306/lv590";
+	//private static String URL = "jdbc:mysql://192.168.153.134:3306/lv590";
+	private static String URL = "jdbc:mysql://192.168.153.134:3306/teach";
 
 	public static void main(String[] args) throws SQLException {
 		System.out.println("Start...");
@@ -37,7 +38,8 @@ public class ApplDB {
 		*/
 		// st.execute(query);
 		//
-		ResultSet rs = st.executeQuery("select * from temp;");
+		//ResultSet rs = st.executeQuery("select * from temp;");
+		ResultSet rs = st.executeQuery("select * from users;");
 		int columnCount = rs.getMetaData().getColumnCount();
 		// Resultset.getMetaData () get the information
 		for (int i = 1; i <= columnCount; i++) {
